@@ -21,29 +21,28 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public void start(Stage primaryStage) {
-        // This is creating the structure of the box
+        //This is creating the structure of the box and align the content in the box in the center
         GridPane root = new GridPane();
         root.setAlignment(Pos.CENTER);
         StackPane pane = new StackPane();
 
-        // This is creating the textbook for the user to input the number of choice
+        //This is creating the textbook for the user to input the number of choice
         Label num = new Label("Enter a Number: ");
         TextField numInput = new TextField();
 
-
-        // These are the radioButtons to select the color choices using togglegroup to select the options
+        //These are the radioButtons to select the color choices using togglegroup to select the options
         ToggleGroup colorGroup = new ToggleGroup();
         RadioButton blueBT = new RadioButton("Blue");
         blueBT.setToggleGroup(colorGroup);
         RadioButton greenBT = new RadioButton("Green");
         greenBT.setToggleGroup(colorGroup);
 
-
-        // This is creating the submit button
+        //This is creating the submit button
         Button submitBT = new Button("Submit");
 
 
-        //This function handle will enable the submit button to do a push action
+        
+        //This event handle will enable the submit button to do a push action
         submitBT.setOnAction(new EventHandler<ActionEvent>() {
 
             public void handle(ActionEvent actionEvent) {
@@ -63,7 +62,7 @@ public class Main extends Application {
                     ImageView imgView2 = new ImageView(image2);
                     pane.getChildren().add(imgView2);
                 }
-                // This will allow the selected color to be output
+                // This will allow the user to select the color to be output to either blue or green
                 if(blueBT.isSelected()){
                     root.setStyle("-fx-background-color: skyblue");
                     System.out.println("This is blue");
